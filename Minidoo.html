@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>MiniDoo</title>
+</head>
+<body>
+    <div id="container">
+        <div class="accordion">
+
+            <button class="accordion-header"><span><b>Falta</b></span><i class="fa-solid fa-chevron-down arrow"></i></button>
+            <div class="accordion-body">
+
+                <p style="font-size: 16px;">Primeiramente, precisamos entender se o produto que faltou está sendo cobrado ou não. Ao acessar <b>detalhes do pedido</b>
+                no Dynamics, conseguiremos identificar se houve corte. </p>
+
+                <button class="accordion-header-sub"><span><b>Produto faturado</b></span><i class="fa-solid fa-chevron-down"></i></button>
+                <div class="accordion-body-sub">
+                    <p><b>Se o produto foi faturado e faltou na caixa, então precisamos analisar:</b><br><br>
+
+                        • Faltou mais de 50% da caixa? Então, abra a <span style="background-color: rgb(229, 229, 17);">desistência do pedido.</span> (Se for um possível fraudador, considere o valor
+                         total dos produtos ao invés da quantidade de itens)<br><br>
+
+                        • Verifique se a CN já entrou em contato para reclamar dos mesmos itens do pedido no <b>painel de consulta. </b>
+
+                        Lembre de confirmar se a CN <span style=color:red>conferiu toda a caixa</span> antes de abrir a ocorrência, evitando possíveis rechamadas. 
+                        Ao prosseguir, os seguintes dados são necessários: <br><br>
+                        <b>Descrição:</b><br>
+                    </p>
+                        <div id="texto"><p>CN entra em contato afirmando que houve falta de produtos em sua caixa e deseja abrir uma reclamação de falta.
+<br>Pedido:
+<br>Produto e quantidade:
+<br>CN aceitou a incorporação?<br><br>
+                        </p>
+                        </div>
+                        <div id="Copy">
+                            <button id="btnCopiar" onclick="copiarTexto1()" >Copiar</button>
+                            <div id="mensagem" style="display: none;">
+                        </div>
+                    </div><br>
+                    <p><b>Tabulação: </b><span style="color: blue; font-weight: bolder;">Pós compra <b style="font-size: 20px">→</b> Falta <b style="font-size: 20px">→</b> Produto faturado</span></p>
+
+                </div>
+               
+
+                <button class="accordion-header-sub"><span><b>Produto cortado na separação</b></span><i class="fa-solid fa-chevron-down"></i></button>
+                <div class="accordion-body-sub">
+                    <p>Agora, precisamos identificar qual foi a forma de pagamento da CN: <BR><BR>
+
+                        • <B>Boleto à vista, PIX ou Cartão de crédito:</B> Devemos abrir a ocorrência de <span style="color: blue; font-weight: bolder;">Pós compra <b style="font-size: 20px">→</b> Falta <b style="font-size: 20px">→</b> Produto cortado na separação</span>.
+                        <BR><BR>
+                        • <B>Boleto na caixa:</B> Nesse caso, significa que o produto não foi cobrado, uma vez que a nota só é faturada após a caixa ser preparada. Portanto, siga com a negativa.
+                            <BR><BR> 
+                        <B>Caso o sistema não esteja habilitando a reparação, siga o paliativo abrindo a ocorrência de <span style=color:red>Recálculo de Nota</B><br><br>
+                        <b>Descrição:</b><br>
+                    </p>
+                        <div id="texto"><p>CN realizou o pagamento no cartão de crédito, o produto foi cortado na separação e não foi gerado nenhuma nota de crédito ou reparação. Ao tentar abrir a ocorrência de produto cortado na separação, o sistema não habilita a forma de reparação, sendo necessário abrir paliativo.<br>
+                        <br>Pedido:
+                        <br>Produto e quantidade:
+                        <br>E-mail:
+                        <br>Telefone:<br><br>
+                        </p>
+                        </div>
+                        <div id="Copy">
+                            <button id="btnCopiar" onclick="copiarTexto4()">Copiar</button>
+                            <div id="mensagem" style="display: none;">
+                        </div>
+                    </div><br>
+                    <b>Tabulação: </b><span style="color: blue; font-weight: bolder;">Pós compra <b style="font-size: 20px">→</b> Nota Fiscal <b style="font-size: 20px">→</b> Recálculo de nota</span></p>
+                </div>
+
+
+
+
+
+                
+                <button class="accordion-header-sub"><span><b>Falta com envio de produto a mais</b></span><i class="fa-solid fa-chevron-down"></i></button>
+                <div class="accordion-body-sub">
+                    <p>A CN entra em contato e diz que não recebeu o produto que pediu, mas que enviaram outro no lugar.<br><br>
+                        • Primeiro, vamos se certificar que não se trata de um <span style="background-color: rgb(229, 229, 17)">produto plano B</span>. Para isso, basta acessar o pedido no <b>CAPTA</b> e buscar no nome do produto <b>"PB"</b> seguido de um número. Ou através de <b>itens do pedido</b> no Dynamics.</p><br>
+                        • Se o produto faltou, e não foi um plano B, siga com o processo habitual de faltas e selecione no dynamics na opção de "Envio de itens a mais" como <b>SIM</b>.<br><br>
+                        • Em seguida, vá na opção de "Busca de produto" em <b>Botões da ocorrência</b> e insira o código do produto que foi enviado a mais.<br><br>
+                        Dessa forma, o item que foi enviado será recolhido em até 2 ciclos e ela receberá a incorporação ou nota de crédito do produto que faltou.<br><br>
+                        <b>Descrição:</b><br>
+                    </p>
+                        <div id="texto"><p>CN entra em contato afirmando que houve falta de produtos em sua caixa e enviaram um produto a mais no lugar. Deseja abrir uma reclamação de falta e que o produto a mais seja recolhido.<br>
+<br>Pedido:
+<br>Produto e quantidade:
+<br>Item a mais e quantidade:
+<br>CN aceitou a incorporação?<br><br>
+                        </p>
+                        </div>
+                        <div id="Copy">
+                            <button id="btnCopiar" onclick="copiarTexto2()">Copiar</button>
+                            <div id="mensagem" style="display: none;">
+                        </div>
+                    </div><br>
+                    <p><b>Tabulação: </b><span style="color: blue; font-weight: bolder;">Pós compra <b style="font-size: 20px">→</b> Falta <b style="font-size: 20px">→</b> Produto faturado</span></p>
+                </div>
+
+                <button class="accordion-header-sub"><span><b>Falta e defeito no mesmo pedido</b></span><i class="fa-solid fa-chevron-down"></i></button>
+                <div class="accordion-body-sub">
+                    <p>A consultora entra em contato e informa que além da falta de um produto também tem um outro que veio com defeito.
+                     A fim de evitar erros sistêmicos, iremos seguir com a seguinte ordem: <b>1° Defeito</b> e <b>2° Falta</b>.<br><br>
+                     
+                     • <b>Mas o que fazer se mesmo assim, ao abrir a solicitação de defeito, não for mais possível abrir a solicitação de falta?</b>
+                     Nesse caso, nós iremos seguir com o processo paliativo de <span style="color: red; font-weight: bolder;">Promoção não aplicada.</span><br>
+                     
+
+                        <br><b>Descrição paliativo:</b><br>
+                    </p>
+                        <div id="texto"><p>CN entra em contato informando que houve falta e defeito no mesmo pedido. Após abrir a ocorrência de defeito,
+                        não está sendo possível abrir solicitação de falta. Abrindo paliativo para resolução.<br>
+<br>Pedido:
+<br>Produto e quantidade:
+<br>Telefone:
+<br>E-mail:<br><br>
+                        </p>
+                        </div>
+                        <div id="Copy">
+                            <button id="btnCopiar" onclick="copiarTexto3()">Copiar</button>
+                            <div id="mensagem" style="display: none;">
+                        </div>
+                    </div><br>
+                    <p><b>Tabulação: </b><span style="color: blue; font-weight: bolder;">Pós compra <b style="font-size: 20px">→</b> Promoção não aplicada <b style="font-size: 20px">→</b> Promoção consultora</span></p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="accordion">
+            <button class="accordion-header"><span><b>Defeito</b></span><i class="fa-solid fa-chevron-down arrow"></i></button>
+            <div class="accordion-body">
+                <P>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Itaque ab nisi, fuga sequi aliquam sed dolorum inventore officia,
+                qui quisquam enim iure. Eius perferendis aliquid culpa! Unde dolores
+                quis dignissimos.</P>
+            </div>
+        </div>
+
+        <div class="accordion">
+            <button class="accordion-header"><span><b>Atraso na entrega</b></span><i class="fa-solid fa-chevron-down arrow"></i></button>
+            <div class="accordion-body">
+                <P>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Itaque ab nisi, fuga sequi aliquam sed dolorum inventore officia,
+                qui quisquam enim iure. Eius perferendis aliquid culpa! Unde dolores
+                quis dignissimos.</P>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="JS/script.js"></script>
+</body>
+</html>
