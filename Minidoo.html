@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>MiniDoo</title>
+</head>
+<body>  
+    </div>
+    <div id="container">
+        <div class="header-logo">
+            <img src="Imagens/Logo1-rm.png" alt="Logo MiniDoo">
+        </div>
+        <div class="accordion">
+
+            <button class="accordion-header"><span><b>Falta</b></span><i class="fa-solid fa-chevron-down arrow"></i></button>
+            <div class="accordion-body">
+
+                <p style="font-size: 16px;">Primeiramente, precisamos entender se o produto que faltou está sendo cobrado ou não. Ao acessar <b>detalhes do pedido</b>
+                no Dynamics, conseguiremos identificar se houve corte. </p>
+
+                <button class="accordion-header-sub"><span><b>Produto faturado</b></span><i class="fa-solid fa-chevron-down"></i></button>
+                <div class="accordion-body-sub">
+                    <p><b>Se o produto foi faturado e faltou na caixa, então precisamos analisar:</b><br><br>
+
+                        • Faltou mais de 50% da caixa? Então, abra a <span style="background-color: rgb(229, 229, 17);">desistência do pedido.</span> (Se for um possível fraudador, considere o valor
+                         total dos produtos ao invés da quantidade de itens)<br><br>
+
+                        • Verifique se a CN já entrou em contato para reclamar dos mesmos itens do pedido no <b>painel de consulta. </b>
+
+                        Lembre de confirmar se a CN <span style=color:red>conferiu toda a caixa</span> antes de abrir a ocorrência, evitando possíveis rechamadas. 
+                        Ao prosseguir, os seguintes dados são necessários: <br><br>
+                        <b>Descrição:</b><br>
+                    </p>
+                        <div id="texto"><p>CN entra em contato afirmando que houve falta de produtos em sua caixa e deseja abrir uma reclamação de falta.<br>
+<br>Pedido:
+<br>Produto e quantidade:
+<br>CN aceitou a incorporação?<br><br>
+                        </p>
+                        </div>
+                        <div id="Copy">
+                            <button id="btnCopiar" onclick="copiarTexto1()" >Copiar</button>
+                            <div id="mensagem" style="display: none;">
+                        </div>
+                    </div><br>
+                    <p><b>Tabulação: </b><span style="color: blue; font-weight: bolder;">Pós compra <b style="font-size: 20px">→</b> Falta <b style="font-size: 20px">→</b> Produto faturado</span></p>
+                </div>
+               
+
+                <button class="accordion-header-sub"><span><b>Produto cortado na separação</b></span><i class="fa-solid fa-chevron-down"></i></button>
+                <div class="accordion-body-sub">
+                    <p>Agora, precisamos identificar qual foi a forma de pagamento da CN: <BR><BR>
+
+                        • <B>Boleto à vista, PIX ou Cartão de crédito:</B> Devemos abrir a ocorrência de <span style="color: blue; font-weight: bolder;">Pós compra <b style="font-size: 20px">→</b> Falta <b style="font-size: 20px">→</b> Produto cortado na separação</span>.
+                        <BR><BR>
+                        • <B>Boleto na caixa:</B> Nesse caso, significa que o produto não foi cobrado, uma vez que a nota só é faturada após a caixa ser preparada. Portanto, siga com a negativa.
+                            <BR><BR> 
+                        <B>Caso o sistema não esteja habilitando a reparação, siga o paliativo abrindo a ocorrência de <span style=color:red>Recálculo de Nota</B><br><br>
+                        <b>Descrição:</b><br>
+                    </p>
+                        <div id="texto"><p>CN realizou o pagamento no cartão de crédito, o produto foi cortado na separação e não foi gerado nenhuma nota de crédito ou reparação. Ao tentar abrir a ocorrência de produto cortado na separação, o sistema não habilita a forma de reparação, sendo necessário abrir paliativo.<br>
+                        <br>Pedido:
+                        <br>Produto e quantidade:
+                        <br>E-mail:
+                        <br>Telefone:<br><br>
+                        </p>
+                        </div>
+                        <div id="Copy">
+                            <button id="btnCopiar" onclick="copiarTexto4()">Copiar</button>
+                            <div id="mensagem" style="display: none;">
+                        </div>
+                    </div><br>
+                    <b>Tabulação: </b><span style="color: blue; font-weight: bolder;">Pós compra <b style="font-size: 20px">→</b> Nota Fiscal <b style="font-size: 20px">→</b> Recálculo de nota</span></p>
+                </div>
+
+
+
+
+
+                
+                <button class="accordion-header-sub"><span><b>Falta com envio de produto a mais</b></span><i class="fa-solid fa-chevron-down"></i></button>
+                <div class="accordion-body-sub">
+                    <p>A CN entra em contato e diz que não recebeu o produto que pediu, mas que enviaram outro no lugar.<br><br>
+                        • Primeiro, vamos se certificar que não se trata de um <span style="background-color: rgb(229, 229, 17)">produto plano B</span>. Para isso, basta acessar o pedido no <b>CAPTA</b> e buscar no nome do produto <b>"PB"</b> seguido de um número. Ou através de <b>itens do pedido</b> no Dynamics.</p><br>
+                        • Se o produto faltou, e não foi um plano B, siga com o processo habitual de faltas e selecione no dynamics na opção de "Envio de itens a mais" como <b>SIM</b>.<br><br>
+                        • Em seguida, vá na opção de "Busca de produto" em <b>Botões da ocorrência</b> e insira o código do produto que foi enviado a mais.<br><br>
+                        Dessa forma, o item que foi enviado será recolhido em até 2 ciclos e ela receberá a incorporação ou nota de crédito do produto que faltou.<br><br>
+                        <b>Descrição:</b><br>
+                    </p>
+                        <div id="texto"><p>CN entra em contato afirmando que houve falta de produtos em sua caixa e enviaram um produto a mais no lugar. Deseja abrir uma reclamação de falta e que o produto a mais seja recolhido.<br>
+<br>Pedido:
+<br>Produto e quantidade:
+<br>Item a mais e quantidade:
+<br>CN aceitou a incorporação?<br><br>
+                        </p>
+                        </div>
+                        <div id="Copy">
+                            <button id="btnCopiar" onclick="copiarTexto2()">Copiar</button>
+                            <div id="mensagem" style="display: none;">
+                        </div>
+                    </div><br>
+                    <p><b>Tabulação: </b><span style="color: blue; font-weight: bolder;">Pós compra <b style="font-size: 20px">→</b> Falta <b style="font-size: 20px">→</b> Produto faturado</span></p>
+                </div>
+
+                <button class="accordion-header-sub"><span><b>Falta e defeito no mesmo pedido</b></span><i class="fa-solid fa-chevron-down"></i></button>
+                <div class="accordion-body-sub">
+                    <p>A consultora entra em contato e informa que além da falta de um produto também tem um outro que veio com defeito.
+                     A fim de evitar erros sistêmicos, iremos seguir com a seguinte ordem: <b>1° Falta</b> e <b>2° Defeito</b>.<br><br>
+                     
+                     • <b>Mas o que fazer se mesmo assim, ao abrir a solicitação de defeito, não for mais possível abrir a solicitação de falta?</b>
+                     Nesse caso, nós iremos seguir com o processo paliativo de <span style="color: red; font-weight: bolder;">Promoção não aplicada.</span><br>
+                     
+
+                        <br><b>Descrição paliativo:</b><br>
+                    </p>
+                        <div id="texto"><p>CN entra em contato informando que houve falta e defeito no mesmo pedido. Após abrir a ocorrência de defeito,
+                        não está sendo possível abrir solicitação de falta. Abrindo paliativo para resolução.<br>
+<br>Pedido:
+<br>Produto e quantidade:
+<br>Telefone:
+<br>E-mail:<br><br>
+                        </p>
+                        </div>
+                        <div id="Copy">
+                            <button id="btnCopiar" onclick="copiarTexto3()">Copiar</button>
+                            <div id="mensagem" style="display: none;">
+                        </div>
+                    </div><br>
+                    <p><b>Tabulação: </b><span style="color: blue; font-weight: bolder;">Pós compra <b style="font-size: 20px">→</b> Promoção não aplicada <b style="font-size: 20px">→</b> Promoção consultora</span></p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="accordion">
+            <button class="accordion-header"><span><b>Defeito</b></span><i class="fa-solid fa-chevron-down arrow"></i></button>
+            <div class="accordion-body">
+          
+                
+                <button class="accordion-header-sub"><span><b>Fluxo Obrigatório de Qualidade</b></span><i class="fa-solid fa-chevron-down"></i></button>
+                <div class="accordion-body-sub">
+                    <p>
+                        Desde a última atualização, ao realizarmos qualquer uma ocorrência de defeito, devemos seguir com o script obrigatório em todos os casos e fazer as devidas sondagens.<br><br>
+                Qualquer caso em que a consultora relatar que <span style="background-color: rgb(229, 229, 17);">o produto passou pela mão da cliente ou já que já foi usado</span>, deverá ser encaminhado para a central de atendimento ao consumidor <b>(SNAC)</b>, em um dos números nas opções 1 para SNAC ou 2 para Rede:<br><br>
+                0800-011-5566 (Telefone Fixo) <br> 0300-711-5566 (Celular) <br> 0800 708 28 66 (Avon)<br><br>
+                Lembrando que o atendimento é realizado de segundo à sexta das 08h00 às 20h00 e aos sábados das 09h00 às 08h00.<br><br>
+
+                <b>Manifestações recorrentes de snac são:</b><br>
+                • Minha cliente teve uma reação adversa<br>• O produto alterou durante o uso<br>• Faltou fixação no perfume ou tem cheiro de álcool<br>• Produto está próximo do vencimento <br><br>
+                Para os demais casos, seguimos com os procedimentos habituais de defeito, respeitando o prazo de <b>30 dias</b>. Caso esteja abrindo uma ocorrência de falta e defeito, lembre-se <b>1° Falta e 2° Defeito.</b> Em caso de problemas, seguir com paliativo em <span style="color: red; font-weight: bolder;"> promoção não aplicada.</span><br><br>
+                Só abra a ocorrência se o pedido já estiver com o status <span style="color: green; font-weight: bolder;">Entregue.</span><br><br>
+                
+                <b>Descrição:</b><br>
+                CN entra em contato informando que vieram produtos com defeito em sua caixa e deseja reparação.<br><br>
+                Pedido:<br>Código do produto:<br> Nome do produto: <br> Quantidade: <br> Lote: <br> Validade: <br> Qual o local do defeito? (Ex: Válvula, Tampa, Pescante..): <br> Qual o desvio? (Ex: Quebrado, Manchado, Riscado..): <br> Estado do produto (Aberto ou Fechado): <br> Estado da caixa do pedido:  <br> Voz da consultora: <br><br>
+                </p>
+
+                <div id="Copy">
+                    <button id="btnCopiar" onclick="copiarTexto5()">Copiar</button>
+                    <div id="mensagem" style="display: none;">
+                </div></div>
+
+                <br><p><b>Ocorrência:</b> <span style="color: blue; font-weight: bolder;">compra → Defeito → Produto faturado.</span></p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="accordion">
+            <button class="accordion-header"><span><b>Tecnologia</b></span><i class="fa-solid fa-chevron-down arrow"></i></button>
+            <div class="accordion-body">
+                
+                <button class="accordion-header-sub"><span><b>Pedido em Epaço Default</b></span><i class="fa-solid fa-chevron-down"></i></button>
+                <div class="accordion-body-sub">
+                    <p>Antes de prosseguirmos com qualquer ocorrência, precisamos confirmar se realmente o pedido foi realizado no espaço default, ou seja, sem vínculo com o espaço digital da consultora, e se realmente ela orientou a cliente de forma adequada.<br><br>
+                    <b>1°</b> O pedido está dentro do prazo de 30 dias?<br> 
+                    <b>2°</b> Já passou do prazo de 2 dias úteis após a confirmação do pagamento para o recebimento da comissão?<br> <br> 
+                    Se a resposta for <b>sim</b> para qualquer uma das questões, prossiga para a próxima etapa. Caso contrário, <b>passe a negativa</b> para a CN.<br><br>
+                    • Pesquise no <span style="color: red;">Painel de Consulta</span> se já foi aberta alguma solicitação anterior.<br>
+                    • Verifique no <span style="color: red;">Sales Force</span> se o pedido consta no espaço da CN.<br>
+                    • Através da <span style="color: red;">GSURF</span>, certifique-se de que realmente a lucratividade não foi paga. Caso tenha sido paga para outra consultora, siga com a negativa, não temos nenhuma ação nesse caso.<br><br>  
+                    Agora que confirmamos que a solicitação dela é procedente, podemos prosseguir com a ocorrência. <span style="background-color: rgb(229, 229, 17);">Lembrando, que só podemos abrir uma solicitação por pedido.</span><br><br>  
+                    <b>Descrição:</b><br>
+                    CN entra em contato informando que a sua cliente fez o pedido através do seu espaço digital, mas o pedido entrou em espaço default. O pedido está dentro do prazo de 30 dias e já passou do prazo de 2 dias úteis para o pagamento da comissão.<br><br> 
+                    Pedido:<br>Nome do espaço da consultora:<br>E-mail:<br>Telefone:<br><br>
+                </p>
+                
+                <div id="Copy">
+                    <button id="btnCopiar" onclick="copiarTexto6()">Copiar</button>
+                    <div id="mensagem" style="display: none;">
+                </div></div>
+
+                <br><b>Anexos:</b><br>
+                <span style="color: red;"><b>PDF</b> com o simulador de lucro de espaço default;</span><br>
+                <span style="color: red;"><b>PDF</b> da captura de tela da GSURF.</span><br>   
+
+                <br><p><b>Ocorrência:</b> <span style="color: blue; font-weight: bolder;">Tecnologia → Problemas de sistema → Pedido espaço Default</span></p>
+                </div>
+
+
+
+
+
+                <button class="accordion-header-sub"><span><b>Lucratividade divergente do nível </b></span><i class="fa-solid fa-chevron-down"></i></button>
+                <div class="accordion-body-sub">
+                    <p>
+                        Devemos seguir com essa solicitação quando a consultora entrar em contato informando que recebeu <span style="background-color: rgb(229, 229, 17);"> uma lucratividade menor do que deveria receber</span> de acordo com o seu nível. Antes de prosseguir, precisamos:<br><br>
+                        • Consultar o nível da consultora no <span style="color: red;">gestão comercial</span> e em qual ciclo ela migrou de nível.<br><br>
+                        • Depois, confirmar <b>a porcentagem que ela recebeu pelo pedido</b>, clicando no ciclo referente e verificar se está de acordo com a porcentagem do seu nível.<br><br>
+                        • Agora, certifique-se de que o pedido atingiu a pontuação de <span style="background-color: rgb(229, 229, 17);">pedido lucrativo</span> (35 pontos <b>Avon</b> e 80 pontos <B>Natura</B>), caso ela não tenha atingido a pontuação, informe a CN e finalize o atendimento.<br><br>
+                        • Verifique se há alguma duplicidade de cadastro ou divergência cadastral <span style="color: red;">(GPP, Sales e CAD)</span>, se existir, será necessário corrigir e só então abrir a solicitação.<br><br>
+                        Se após isso, confimou que a porcentagem realmente está incorreta, que ela não migrou de nível com o pedido em questão, e o pedido atingiu a pontuação de pedido lucrativo, prossiga com a solicitação.<br><br>
+                        <b>Descrição:</b><br>
+                        CN entra em contato informando que não recebeu a sua lucratividade como deveria. Ao verificar, a lucratividade de fato está divergente de acordo com seu nível.<br><br>
+                        Pedido:<br>Avon ou Natura:<br>Pontos:<br>Nível:<br>Ciclo em que migrou para o nível atual:<br>E-mail:<br>Telefone:
+                    </p>                    
+
+                    <div id="Copy">
+                        <br><button id="btnCopiar" onclick="copiarTexto7()">Copiar</button>
+                        <div id="mensagem" style="display: none;">
+                    </div></div>
+
+                    <br><b>Anexos:</b><br>
+                    <span style="color: red;"><b>PDF</b> com o simulador de lucro de espaço default;</span><br>
+                    <span style="color: red;"><b>PDF</b> do gestão comercial</span> (parte que mostra a porcentagem de lucratividade e pontos do pedido).<br>   
+                    
+                    <br><p><b>Ocorrência:</b> <span style="color: blue; font-weight: bolder;">Tecnologia → Problemas de sistema → Plano de crescimento</span></p>
+                </div>
+
+
+                
+
+                <button class="accordion-header-sub"><span><b>Pontos não contabilizados no plano de crescimento</b></span><i class="fa-solid fa-chevron-down"></i></button>
+                <div class="accordion-body-sub">
+                    <p>
+                        Devemos seguir com essa solicitação quando a consultora entrar em contato informando que <span style="background-color: rgb(229, 229, 17);">os pontos das vendas não estão contando para o seu plano de crescimento.</span> Antes de prosseguir, precisamos:<br><br>
+                        • Confirme a pontuação que ela recebeu pelo pedido clicando no ciclo referente a captação ou através dos outros sistemas, como <span style="color: red;">capta e dynamics.</span><br><br>
+                        • Através do <span style="color: red;">Gestão Comercial</span>, verifique se a pontuação do pedido foi contabilizado dentro do total de pontos.<br><br>
+                        • Verifique se há alguma duplicidade de cadastro ou divergência cadastral <span style="color: red;">(GPP, Sales e CAD)</span>, se existir, será necessário corrigir e só então abrir a solicitação.<br><br>
+                        Se após isso, confimou que a pontuação realmente não foi contabilizada, prossiga com a solicitação.<br><br>
+                        <b>Descrição:</b><br>
+                        CN entra em contato informando que a pontuação do pedido que realizou não foi contabilizada. Ao verificar, a pontuação realmente não está sendo contada dentro do seu plano de crescimento.<br><br>
+                        Pedido:<br>Avon ou Natura:<br>Pontos:<br>Nível:<br>Ciclo em que migrou para o nível atual:<br>E-mail:<br>Telefone:
+
+                        
+                    </p>                    
+
+                    <div id="Copy">
+                        <br><button id="btnCopiar" onclick="copiarTexto8()">Copiar</button>
+                        <div id="mensagem" style="display: none;">
+                    </div></div>
+
+                    <br><b>Anexos:</b><br>
+                    <span style="color: red;"><b>PDF</b> do gestão comercial</span> (parte que mostra a porcentagem de lucratividade e pontos do pedido).<br>
+                    
+                    <br><p><b>Ocorrência:</b> <span style="color: blue; font-weight: bolder;">Tecnologia → Problemas de sistema → Plano de crescimento</span></p>
+                </div>
+            </div>
+        </div>
+
+    
+
+
+        <div class="accordion">
+            <button class="accordion-header"><span><b>Parceiros</b></span><i class="fa-solid fa-chevron-down arrow"></i></button>
+            <div class="accordion-body">
+                
+                <button class="accordion-header-sub"><span><b>Comissão errada ou não paga</b></span><i class="fa-solid fa-chevron-down"></i></button>
+                <div class="accordion-body-sub">
+                    <p>
+                        Iremos abrir essa ocorrência para os casos em que as consultoras entrarem em contato informando que <b>não receberam a comissão</b> mesmo o pedido constando em seu espaço digital, ou quando <b>a comissão foi paga errada</b>, mas no gestão comercial a porcentagem está correta.<br><br>
+                        •  Primeiro vamos consultar no <span style="color: red;">Sales Force</span>, se o pedido foi feito no espaço da consultora.<br><br>
+                        • Agora, precisamos confirmar no <span style="color: red;">Gsurf</span>que o pagamento não foi feito, ou que foi feito de forma errada. Lembrando, que devemos se basear na lucratividade de acordo com o nível da CN no <span style="color: red;">Gestão Comercial</span>.<br><br>
+                        • Verifique se há alguma duplicidade de cadastro ou divergência cadastral (<span style="color: red;">Sales e GPP</span>), se existir, será necessário corrigir e só então abrir a solicitação.<br><br>
+                        Agora que confirmamos que ela tem direito a comissão que foi feita no espaço dela, mas o nosso parceiro financeiro não realizou o pagamento, ou pagou errado, vamos prosseguir com a solicitação.<br><br>
+                        <b>Obs:</b> Caso a comissão esteja aparecendo na Gsurf de forma incorreta, <span style="background-color: rgb(229, 229, 17);">é necessário aguardar o prazo de liquidação de 2 dias úteis antes de abrir uma solicitação de correção.</span><br><br>
+                        <b>Descrição:</b><br>
+                        CN entra em contato informando que teve problemas com o pagamento da sua comissão, e ao verificar, o pedido foi feito no espaço digital dela mas a comissão não foi paga como deveria.<br><br>
+                        Pedido:<br>Nível:<br>E-mail:<br>Telefone:
+                    </p>
+
+                    <div id="Copy">
+                        <br><button id="btnCopiar" onclick="copiarTexto9()">Copiar</button>
+                        <div id="mensagem" style="display: none;">
+                    </div></div>
+
+                    <br><b>Anexos:</b><br>
+                    <span style="color: red;"><b>PDF</b> do simulador de lucro espaço default;</span><br>
+                    <span style="color: red;"><b>PDF</b> do Sales Force</span> (Com evidência que foi feito no espaço da CN);</span><br>
+                    <span style="color: red;"><b>PDF</b> do pedido na GSURF.</span><br>
+
+                    <br><p><b>Ocorrência:</b> <span style="color: blue; font-weight: bolder;">Apoio à atividade → Parceiros → Instituição financeira.</span></p>
+                </div>
+            </div>
+        </div>
+
+    <script src="JS/script.js"></script>
+</body>
+</html>
